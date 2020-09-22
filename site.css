@@ -1,3 +1,10 @@
-h1{
-  color: red;
+h2{
+  color:#512e5f
+}
+.biobox{
+  border-width:2px;
+  border-style: solid;
+  order-color: black;
+  idth: 320px
+  padding:10px 10px 10px 10px
 }
