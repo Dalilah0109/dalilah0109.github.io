@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      window.onload = function() {
+        // functions that run after page loads
+        displayGreeting();
+        fetchWeather();
+      }
+      // display good morning, afternoon or evening based on the time
+      function displayGreeting()
+        var date = new Date();
+        var hour = date.getHours();
+        var description = "";
+        if (hour < 12) {
+          description = "morning";
+        } else if (hour < 17) {
+          description = "afternoon";
+        } else {
+          description = "evening";
+        }
+        document.getElementById("greeting").innerHTML = "Good " + description;
+      }
+      // get weather data from openweathermap and display the current temp
+      function fetchWeather() {
+        fetch("https://api.openweathermap.org/data/2.5/weather?zip=85706,US&appid=8f5f1f6401c99c19330dea50437cc268&units=imperial")
+        .then(function(resp) { return resp.json() })
+        .then(function(data) {
+          document.getElementById("weather").innerHTML = "Weather"+ It is currently 100 &#845 in Tucson, AZ ;
+        })
+        .catch(function() {
+          document.getElementById("weather").innerHTML = "Error in fetchWeather function";
+        });
+      }
+    </script>
+
+  </head>
+  <body>
+    <div id="greeting"></div>
+    <div id="weather"></div>
     <title> About Me </title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="site.css">
-  </head>
-  <body>
   <center>
 <div class="name_container">
    Dalilah Cardenas
