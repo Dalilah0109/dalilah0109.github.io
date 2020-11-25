@@ -9,6 +9,7 @@
         // functions that run after page loads
         displayGreeting();
         fetchWeather();
+        displayRSSFeed();
       }
       // display good morning, afternoon or evening based on the time
       function displayGreeting(){
@@ -33,53 +34,27 @@
         })
         .catch(function() {
           document.getElementById("weather").innerHTML = "Error in fetchWeather function";
-        });
-        window.onload= fuction(){
-          // functions that run after page loads
-          displayRSSFeed();
         }
+
         function displayRSSFeed() {
-      // fetch an RSS feed and display the title and description
-      var origURL = 'https://tucson.com/news/local/updates-tucson-area-coronavirus-developments-nov-25-what-we-know/article_dc8e92ea-6561-11ea-9e87-17207f678ee6.html';
-      // feednami doesn't like & so replace with %26
-      var replacedURL = origURL.replace(/&/g, "%26");
-      feednami.load(replacedURL,function(result) {
-        if (result.error) {
-          console.log(result.error);
-        } else {
-          var entries = result.feed.entries
-          for (var i = 0; i < entries.length; i++) {
-            var entry = entries[i];
-            let divElement = '<div class="rss_title"><a href="'+ entry.link + '" target="_blank">' + entry.title + '</a></div><div class="rss_description">' + entry.description + '</div>';
-            document.getElementById('<div class="rss_items">'+).innerHTML += divElement; '</div>'
+        // fetch an RSS feed and display the title and description
+        var origURL = 'https://feeds.a.dj.com/rss/RSSWSJD.xml';
+        // feednami doesn't like & so replace with %26
+        var replacedURL = origURL.replace(/&/g, "%26");
+        feednami.load(replacedURL,function(result) {
+          if (result.error) {
+            console.log(result.error);
+          } else {
+            var entries = result.feed.entries
+            for (var i = 0; i < entries.length; i++) {
+              var entry = entries[i];
+              let divElement = '<div class="rss_title"><a href="' + entry.link + '" target="_blank">' + entry.title + '</a></div><div class="rss_description">' + entry.description + '</div>';
+              document.getElementById("rss_items").innerHTML += divElement;
+            }
           }
-        }
-      });
-    }
-        displayRSSFeed();
-        function listSheet() {
-               // list google sheet rows
-               fetch('https://api.sheetson.com/v2/sheets/SHEET_NAME_HERE', {
-                 withCredentials: true,
-                 headers: {
-                   'Content-Type': 'application/json',
-                   'Authorization': 'Bearer API_KEY_HERE',
-                   'X-Sheetson-Spreadsheet-Id': 'SHEET_ID_HERE'
-                 }
-               })
-               .then(function(resp) { return resp.json() })
-               .then(function(data) {
-                 for (var i = 0; i < data.results.length; i++) {
-                   var result = data.results[i];
-                   let divElement = '<div class="cell">' + '<div class="cell_name">' + result.name + '</div>' + '<div class="cell_address">' + result.address + '</div>' + '<div class="cell_url"><a href="' + result.url + '">' + result.url + '</a></div>' + '<div class="cell_phone">' + result.phone + '</div>' + '</div>';
-                   document.getElementById("sheet").innerHTML += divElement;
-                 }
-               })
-               .catch(function() {
-                 document.getElementById("sheet").innerHTML = "Error in listSheet function";
-               });
-             }
+        });
       }
+      
     </script>
     <script src="https://storage.googleis.com/feednami-static/js/feednami-client-v1.0.1.js"></script>
   </head>
