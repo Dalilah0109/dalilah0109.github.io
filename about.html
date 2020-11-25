@@ -29,7 +29,7 @@
         fetch("https://api.openweathermap.org/data/2.5/weather?zip=85706,US&appid=8f5f1f6401c99c19330dea50437cc268&units=imperial")
         .then(function(resp) { return resp.json() })
         .then(function(data) {
-          document.getElementById("weather").innerHTML = "It is currently " + data.main.temp + "&deg In Tucson, AZ." ;
+        document.getElementById("weather").innerHTML = "It is currently " + data.main.temp + "&deg In Tucson, AZ." ;
         })
         .catch(function() {
           document.getElementById("weather").innerHTML = "Error in fetchWeather function";
