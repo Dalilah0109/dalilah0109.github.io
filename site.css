@@ -91,3 +91,8 @@ a {
 .cell_url{
 
 }
+#mapid{
+  height:640px;
+  width:640px;
+  border:2px solid hotpink
+}
