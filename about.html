@@ -18,8 +18,7 @@
         displayRSSFeed();
         var mymap = drawMap();
         listSheet(mymap);
-        var mymap= addPin();
-        bindPopup();
+
 
 
       }
@@ -77,18 +76,6 @@
               zoomOffset: -1,
               accessToken: 'pk.eyJ1IjoiZGFsaWxhaGMiLCJhIjoiY2tpNnh4a2FzMDV4YjJ4cWdjYWo1NG83diJ9.grvA_NjZAXjeX0zWEppkUw'
           }).addTo(mymap);
-          var marker = L.marker([32.1333274,-110.9791643]).addTo(mymap);
-          var marker = L.marker([32.1541225,-110.992204]).addTo(mymap);
-          var marker = L.marker([32.1353632,-110.927798]).addTo(mymap);
-          var marker = L.marker([32.1639061,-110.9929492]).addTo(mymap);
-          var marker = L.marker([32.1820822,-110.9500115]).addTo(mymap);
-
-
-          marker.bindPopup("<b>COVID-19 Drive-Thru Testing at Walgreens!</b><br>I am a popup.");
-          marker.bindPopup("<b>NextCare Urgent Care Calle Santa Cruz!</b><br>I am a popup.");
-          marker.bindPopup("<b>ARCpoint Labs of Tucson!</b><br>I am a popup.");
-          marker.bindPopup("<b>Southern Arizona Urgent Care!</b><br>I am a popup.");
-          marker.bindPopup("<b>NextCare Urgent Care Calle Marketplace!</b><br>I am a popup.");
 
           return mymap;
           }
@@ -118,7 +105,7 @@
 
              console.log (result.lon);
              console.log(result.lat);
-             addPin(mymap,result.lat, result.lon,'<strong>'+result.name+'</strong><br>'+results.hours);
+             addPin(mymap,result.lat, result.lon,'<strong>'+result.name+'</strong><br>'+result.hours);
 
            }
          })
