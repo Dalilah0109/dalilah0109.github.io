@@ -6,12 +6,12 @@
   <description> Flash breifing</description>
 
   <item>
-    <pubDate>Sat, 05 Dec 2020 09:00:00 -0700</pubDate>
+    <pubDate>Mon, 14 Dec 2020 09:00:00 -0700</pubDate>
     <title>Story1</title>
     <link>https://dalilah0109.github.io/about.html</link>
     <description>Story1 Audio Summary</description>
-    <enclosure url="https://dalilah0109.github.io/breifs/Story1.mp3" type="audio/mpeg" length="272923"></enclosure>
-    <guid isPermaLink="false">https://dalilah0109.github.io/breifs/Story1.mp3</guid>
+    <enclosure url="https://dalilah0109.github.io/briefs/Story1.mp3" type="audio/mpeg" length="491409 "></enclosure>
+    <guid isPermaLink="false">https://dalilah0109.github.io/briefs/Story1.mp3</guid>
   </item>
 
   <item>
@@ -19,8 +19,8 @@
     <title>Story2</title>
     <link>https://dalilah0109.github.io/about.html</link>
     <description>Story1 Audio Summary</description>
-    <enclosure url="https://dalilah0109.github.io/breifs/Story2.mp3" type="audio/mpeg" length="278059 "></enclosure>
-    <guid isPermaLink="false">https://dalilah0109.github.io/breifs/Story2.mp3</guid>
+    <enclosure url="https://dalilah0109.github.io/briefs/Story2.mp3" type="audio/mpeg" length="500193 "></enclosure>
+    <guid isPermaLink="false">https://dalilah0109.github.io/briefs/Story2.mp3</guid>
   </item>
 </channel>
 </rss>
